@@ -450,15 +450,16 @@ require(["data/dictionary"], function(dictionary) {
 				clipboard_content = "你没有复制内容";
 			}
 		}
-		var dlg = new AlertDialog.Builder(mainActivity);
-		// 设置提示框标题
-		dlg.setTitle("您的剪辑板中的内容为");
-		// 设置提示框内容
-		dlg.setMessage(clipboard_content);
-		// 设置提示框按钮
-		dlg.setPositiveButton("确定",null);
-		// 显示提示框
-		dlg.show();
+		alert(clipboard_content);
+//		var dlg = new AlertDialog.Builder(mainActivity);
+//		// 设置提示框标题
+//		dlg.setTitle("您的剪辑板中的内容为");
+//		// 设置提示框内容
+//		dlg.setMessage(clipboard_content);
+//		// 设置提示框按钮
+//		dlg.setPositiveButton("确定",null);
+//		// 显示提示框
+//		dlg.show();
 //  	document.getElementById("segmentation").value = cut(document.getEle/mentById("sentence").value)
     }
     
