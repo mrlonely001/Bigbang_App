@@ -287,7 +287,8 @@
 					"plus/webview.html",
 					"plus/geolocation.html",
 					"about.html",
-					"plus/events.html"
+					"plus/events.html",
+					"test.html"
 				],
 				"priority": 0
 			},
@@ -537,7 +538,10 @@
 				"resources": [
 					"js/common.js",
 					"css/common.css",
-					"js/immersed.js"
+					"js/immersed.js",
+					"js/scripts/main.js",
+					"js/scripts/data/dictionary.js",
+					"js/scripts/require.js"
 				],
 				"refer": [
 					"plus/njs_android_shortcut.html",
@@ -1386,6 +1390,15 @@
 				"refer": [
 					"plus/doc.html"
 				],
+				"priority": 0
+			},
+			"test.html": {
+				"resources": [
+					"js/scripts/main.js",
+					"js/scripts/data/dictionary.js",
+					"js/scripts/require.js"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
