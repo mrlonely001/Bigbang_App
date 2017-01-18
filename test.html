@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<title>Hello H5+</title>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script data-main="js/scripts/main" src="js/scripts/require.js"></script>
+		<script type="text/javascript">
+				// 解锁并关闭
+			var _back=window.back;
+			function unlockback(){
+				plus.screen.unlockOrientation();
+				_back();
+			}
+			window.back=unlockback;
+		</script>
+	</head>
+	<body>
+<input type="text" name="sentence" id="sentence" value="" />
+<input type="button" name="cutbtn" id="cutbtn" value="分词" />
+<textarea name="segmentation" rows="" cols=""></textarea>
+</body>
+</html>
