@@ -110,6 +110,35 @@ function showNjsView(){
 	}
 }
 
+function showclipboard(){
+	var clipboard_content = null;
+	if(plus.os.name == 'Android'){
+		var Context = plus.android.importClass("android.content.Context");
+		var ClipboardManager = plus.android.importClass("android.content.ClipboardManager");
+		var ClipData = plus.android.importClass("android.content.ClipData");
+		var clpmger = new ClipboardManager();
+		clpmger = plus.android.runtimeMainActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+		var abc = new ClipData();
+		abc = clpmger.getPrimaryClip();
+		if(abc != null){
+			var item = new ClipData.Item();
+			item = abc.getItemAt(0);
+			clipboard_content = item.getText().toString();
+		}else{
+			clipboard_content = "你没有复制内容";
+		}
+	}
+	var dlg = new AlertDialog.Builder(mainActivity);
+	// 设置提示框标题
+	dlg.setTitle("您的剪辑板中的内容为");
+	// 设置提示框内容
+	dlg.setMessage(clipboard_content);
+	// 设置提示框按钮
+	dlg.setPositiveButton("确定",null);
+	// 显示提示框
+	dlg.show();
+}
+
 function gamecenter(){
 	if ( 'iOS' == plus.os.name ) {
 		clicked('njs_ios_gamecenter.html',true);
@@ -144,6 +173,7 @@ function shortcut(){
 			<ul class="dlist">
 				<li class="ditem" onclick="showNjsView()">native.js调用系统提示框</li>
 				<li class="ditem" onclick="clicked('njs_efficient.html')">native.js高级API</li>
+				<li class="ditem" onclick="showclipboard()">剪辑板内容</li>
 			</ul>
 			<br/>
 			<div class="button button-waring" onclick="plus.runtime.openURL('http://ask.dcloud.net.cn/article/114');">更多示例...</div>
